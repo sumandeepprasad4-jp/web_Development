@@ -1,4 +1,4 @@
-# 🎮 Web Game Hub (Mini Games Website)
+# 🎮 Mini Game Hub (Mini Games Website)
 
 This project is a simple and interactive **web-based game collection** built using **HTML, CSS, and JavaScript**.
 It contains multiple mini games that users can play directly in the browser.
