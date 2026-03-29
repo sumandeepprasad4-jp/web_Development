@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+        button{
+            padding: 15px;
+            margin: 7px;
+            border-radius:0px;
+            cursor: pointer;
+            border: 2px solid rgb(222, 234, 227);
+            background-color: hsl(185, 5%, 52%);
+            width: 50%;
+        }
+        #back{
+            background-color:rgb(234, 165, 62);
+            border-radius:0px;
+            padding: 15px;
+            margin-top: 70px;
+        }
+  </style>
+</head>
+
+<body>
+    <nav>
+  <h2>GameHub 🎮</h2>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="index.html">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+  <h1>🧠 Quiz Game</h1>
+
+  <h3 id="question">Question will appear here</h3>
+
+  <button onclick="checkAnswer('a')" id="a"></button><br><br>
+  <button onclick="checkAnswer('b')" id="b"></button><br><br>
+  <button onclick="checkAnswer('c')" id="c"></button><br><br>
+  <button onclick="checkAnswer('d')" id="d"></button>
+
+  <p id="result"></p>
+  <p id="score"></p>
+
+  <br>
+  <a href="../index.html">
+    <button id="back">⬅ Back to Home</button>
+  </a>
+
+  <script>
+    let questions = [
+      {
+        q: "What does HTML stand for?",
+        a: "Hyper Text Markup Language",
+        b: "High Text Machine Language",
+        c: "Hyper Tool Multi Language",
+        d: "None",
+        correct: "a"
+      },
+      {
+        q: "Which language is used for styling?",
+        a: "HTML",
+        b: "Python",
+        c: "CSS",
+        d: "Java",
+        correct: "c"
+      },
+      {
+        q: "Which is a JavaScript keyword?",
+        a: "int",
+        b: "var",
+        c: "float",
+        d: "char",
+        correct: "b"
+      },
+        {
+    q: "Which HTML tag is used to create a link?",
+    a: "<link>",
+    b: "<a>",
+    c: "<href>",
+    d: "<url>",
+    correct: "b"
+  },
+  {
+    q: "Which tag is used to insert an image in HTML?",
+    a: "<img>",
+    b: "<image>",
+    c: "<pic>",
+    d: "<src>",
+    correct: "a"
+  },
+  {
+    q: "Which property is used to change text color in CSS?",
+    a: "font-color",
+    b: "text-color",
+    c: "color",
+    d: "background-color",
+    correct: "c"
+  },
+  {
+    q: "Which CSS property controls the size of text?",
+    a: "font-style",
+    b: "text-size",
+    c: "font-size",
+    d: "size",
+    correct: "c"
+  },
+  {
+    q: "Which operator is used for strict comparison?",
+    a: "==",
+    b: "=",
+    c: "===",
+    d: "!=",
+    correct: "c"
+  },
+  {
+    q: "Which function generates random number in JavaScript?",
+    a: "random()",
+    b: "Math.random()",
+    c: "getRandom()",
+    d: "number()",
+    correct: "b"
+  },
+  {
+    q: "Which HTML tag is used for JavaScript?",
+    a: "<js>",
+    b: "<javascript>",
+    c: "<script>",
+    d: "<code>",
+    correct: "c"
+  }
+    ];
+
+    let index = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      let q = questions[index];
+      document.getElementById("question").innerText = q.q;
+      document.getElementById("a").innerText = q.a;
+      document.getElementById("b").innerText = q.b;
+      document.getElementById("c").innerText = q.c;
+      document.getElementById("d").innerText = q.d;
+    }
+
+    function checkAnswer(answer) {
+      if (answer === questions[index].correct) {
+        score++;
+        document.getElementById("result").innerText = "✅ Correct!";
+      } else {
+        document.getElementById("result").innerText = "❌ Wrong!";
+      }
+
+      index++;
+
+      if (index < questions.length) {
+        loadQuestion();
+      } else {
+        document.body.innerHTML = 
+          "<h1>🎉 Quiz Finished</h1><h2>Your Score: " + score + "/" + questions.length + "</h2><a href='../index.html'><button>Back to Home</button></a>";
+      }
+    }
+
+    loadQuestion();
+  </script>
+<footer>
+  <p>🎮 Mini Game Hub</p>
+  <p>Developed by Sumandeep.</p>
+  <p>For more information Contact Us: 987654321</p>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+</body>
+</html>

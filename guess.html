@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+        button{
+            padding: 15px;
+            margin: 70px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgb(222, 234, 227);
+            background-color: hsl(185, 87%, 34%);
+            }
+             #guess{
+            background-color: bisque;
+            border: 1px solid;
+            height: 20px;
+            margin-top: 6px;
+            }
+            #back{
+            background-color:rgb(234, 165, 62);
+            border-radius:0px;
+            padding: 15px;
+            }
+  </style>
+</head>
+
+<body>
+<nav>
+  <h2>GameHub 🎮</h2>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="index.html">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+  <h1>🔢 Guess the Number</h1>
+  <p>Guess a number between 1 and 100</p>
+
+  <input type="number" id="guess" placeholder="Enter number">
+  <br><br>
+
+  <button onclick="checkGuess()">Submit</button>
+  <button onclick="resetGame()">Restart</button>
+
+  <p id="result"></p>
+
+  <br><br>
+
+  <a href="../index.html">
+    <button id="back">⬅ Back to Home</button>
+  </a>
+<script>
+  let number = Math.floor(Math.random() * 100) + 1;
+  let attempts = 0;
+
+  function checkGuess() {
+    let guess = document.getElementById("guess").value;
+    attempts++;
+
+    if (guess == number) {
+      document.getElementById("result").innerText =
+        "🎉 Correct! You guessed it in " + attempts + " attempts.";
+    } 
+    else if (guess < number) {
+      document.getElementById("result").innerText =
+        "📉 Too Low! Try again.";
+    } 
+    else {
+      document.getElementById("result").innerText =
+        "📈 Too High! Try again.";
+    }
+  }
+  function resetGame() {
+    number = Math.floor(Math.random() * 100) + 1;
+    attempts = 0;
+    document.getElementById("result").innerText = "";
+    document.getElementById("guess").value = "";
+  }
+  </script>
+<footer>
+  <p>🎮 Mini Game Hub</p>
+  <p>Developed by Sumandeep.</p>
+  <p>For more information Contact Us: 987654321</p>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+</body>
+</html>

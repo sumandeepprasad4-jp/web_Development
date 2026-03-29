@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>RPS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button{
+            padding: 15px;
+            margin: 70px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid rgb(222, 234, 227);
+            background-color: hsl(185, 87%, 34%);
+            width: 10%;
+            height: 10%;
+        }
+        #choose{
+            color:bisque;
+            margin-top: 60px;
+        }
+        footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding:0px;
+        position:static;
+        }
+        #back{
+            background-color:rgb(234, 165, 62);
+            border-radius:0px;
+            padding: 15px;
+            margin-top: 70px;
+            width: 20%;
+        }
+
+    </style>
+    <script>
+        function play(user) {
+  let options = ['rock', 'paper', 'scissors'];
+  let computer = options[Math.floor(Math.random() * 3)];
+
+  if (user === computer) {
+    result = "Draw! 🤝";
+  } else if (
+    (user === 'rock' && computer === 'scissors') ||
+    (user === 'paper' && computer === 'rock') ||
+    (user === 'scissors' && computer === 'paper')
+  ) {
+    result = "You Win! 🏆";
+  } else {
+    result = "You Lose! 👎";
+  }
+
+  document.getElementById("result").innerText =
+    `You: ${user} | Computer: ${computer} → ${result}`;
+}
+    </script>
+</head>
+<body>
+    <nav>
+  <h2>GameHub 🎮</h2>
+
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="index.html">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+    </nav>
+<h1>Wellcome To</h1>
+<h2>Rock👊 Paper✋ Scissors✌️ Game.</h2>
+<p id="choose">Select Your Option..</p>
+<button onclick="play('rock')">Rock</button>
+<button onclick="play('paper')">Paper</button>
+<button onclick="play('scissors')">Scissors</button>
+
+<p id="result"></p>
+<a href="index.html"><button id="back">⬅ Back to Home</button></a>
+<footer>
+    <footer>
+  <p>🎮 Mini Game Hub</p>
+  <p>Developed by Sumandeep.</p>
+  <p>For more information Contact Us: 987654321</p>
+  <p>© 2026 All Rights Reserved</p>
+</footer>
+</body>
+</html>
